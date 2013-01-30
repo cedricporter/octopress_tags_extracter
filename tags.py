@@ -39,7 +39,7 @@ if __name__ == '__main__':
 
     for r, d, f in os.walk(sys.argv[1]):
         for file in f:
-            if file.endswith(".markdown"):
+            if file.endswith(".markdown") and not file.startswith("."):
                 filename = os.path.join(r, file)
                 tags.update(extract(filename))
 
